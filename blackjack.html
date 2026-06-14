@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blackjack - Projekt na informatykę</title>
+    <link rel="stylesheet" href="styl.css">
+</head>
+<body>
+
+    <h1>♠ Blackjack ♥</h1>
+
+    <div id="stol">
+
+        <div id="statystyki">
+            <div class="stat-box">
+                <div class="opis">Żetony</div>
+                <div class="wartosc" id="wyswietl-zetony">500</div>
+            </div>
+            <div class="stat-box">
+                <div class="opis">Zakład</div>
+                <div class="wartosc" id="wyswietl-zaklad">0</div>
+            </div>
+            <div class="stat-box">
+                <div class="opis">Wygrane</div>
+                <div class="wartosc" id="wyswietl-wygrane">0</div>
+            </div>
+            <div class="stat-box">
+                <div class="opis">Przegrane</div>
+                <div class="wartosc" id="wyswietl-przegrane">0</div>
+            </div>
+        </div>
+
+        <div class="etykieta">Krupier</div>
+        <div class="wynik" id="wynik-krupiera">?</div>
+        <div class="obszar-kart" id="karty-krupiera"></div>
+
+        <hr>
+
+        <div class="etykieta">Twoje karty</div>
+        <div class="wynik" id="wynik-gracza">0</div>
+        <div class="obszar-kart" id="karty-gracza"></div>
+
+        <div id="status">Postaw zakład, żeby zacząć!</div>
+
+        <div id="sekcja-zakladu">
+            <div class="info-zakladu" id="info-zakladu">Zakład: 0 żetonów</div>
+            <div class="rzad-zetonow">
+                <div class="zeton z5"   onclick="dodajDoZakladu(5)">5</div>
+                <div class="zeton z10"  onclick="dodajDoZakladu(10)">10</div>
+                <div class="zeton z25"  onclick="dodajDoZakladu(25)">25</div>
+                <div class="zeton z50"  onclick="dodajDoZakladu(50)">50</div>
+                <div class="zeton z100" onclick="dodajDoZakladu(100)">100</div>
+            </div>
+            <div class="przyciski">
+                <button class="btn-zolty" id="przycisk-rozdaj" onclick="rozdaj()" disabled>Rozdaj karty</button>
+                <button class="btn-szary" onclick="wyczyscZaklad()">Wyczyść zakład</button>
+            </div>
+        </div>
+
+        <div id="sekcja-gry" style="display: none;">
+            <div class="przyciski">
+                <button class="btn-zolty"    id="przycisk-dobierz" onclick="dobierz()">Dobierz kartę</button>
+                <button class="btn-czerwony" id="przycisk-stoj"    onclick="stoj()">Stój</button>
+                <button class="btn-szary"    id="przycisk-podwoj"  onclick="podwoj()">Podwój zakład</button>
+            </div>
+        </div>
+
+        <div id="sekcja-konca" style="display: none;">
+            <div class="przyciski">
+                <button class="btn-zolty" onclick="nowaRunda()">Zagraj jeszcze raz</button>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>Projekt na informatykę | Blackjack v1.0</footer>
+
+    <script src="js.js"></script>
+
+</body>
+</html>
